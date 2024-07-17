@@ -31,8 +31,8 @@
 	@stack('footer')
 
 	@vite([
-        'modules/Test/Resources/assets/sass/app.scss',
-        'modules/Test/Resources/assets/js/app.js',
+        'Modules/Test/resources/assets/css/app.css',
+        'Modules/Test/resources/assets/js/app.js',
     ])
 	
 	@vite(['resources/css/app.css', 'resources/js/app.js'])

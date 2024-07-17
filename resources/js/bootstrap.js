@@ -6,9 +6,11 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 window.SayHello = SayHello;
 
+
+
 window.app = createApp({
 	mixins: [
-		//typeof vueMixins == 'undefined' ? '' : vueMixinFunction(),
+		...vueMixinFunctions?.map(mix => mix()),
 		typeof vueMixinFunction == 'undefined' ? '' : vueMixinFunction(),
 	],
 	components: {

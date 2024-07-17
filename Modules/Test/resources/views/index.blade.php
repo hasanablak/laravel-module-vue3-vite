@@ -4,7 +4,7 @@
     <h1>Hello World</h1>
 
     <p>Module: {!! config('test.name') !!}</p>
-	<say-hello-from-test-module name="Hasan" />
+	<test-module-say-hello name="Hasan" />
 @endsection
 
 
@@ -15,7 +15,7 @@
 	const vueMixinFunction = () => {
 		return {
 			components: {
-				SayHelloFromTestModule
+				TestModuleSayHello
 			},
 			data: function(){
 				return {

@@ -13,24 +13,12 @@
 			@yield('content')
 		</div>
 
+
+		<script>
+			const vueMixinFunctions = [];
+		</script>
 		@stack('footer')
-
 		@vite(['resources/css/app.css', 'resources/js/app.js'])
-
-
-		{{-- <script>
-			const intervalId = setInterval(() => {
-				if (window.app != 'undefined') {
-					if(window.app.hasOwnProperty("mount")){
-						window.app.mount("#app");
-						clearInterval(intervalId);
-						console.log("app çalıştırıldı!")
-					}
-				} else {
-					console.log("window.app yok tekrar kontrol ediliyor")
-				}
-			}, 10);
-		</script> --}}
 
 </body>
 </html>

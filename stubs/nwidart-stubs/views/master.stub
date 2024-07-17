@@ -16,14 +16,25 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+	@stack('header')
 
-    {{-- Vite CSS --}}
-    {{-- {{ module_vite('build-$LOWER_NAME$', 'resources/assets/sass/app.scss') }} --}}
 </head>
 
 <body>
-    @yield('content')
+   <div id="app">
+	 @yield('content')
+   </div>
 
-    {{-- Vite JS --}}
-    {{-- {{ module_vite('build-$LOWER_NAME$', 'resources/assets/js/app.js') }} --}}
+
+	<script>
+		const vueMixinFunctions = [];
+	</script>
+	@stack('footer')
+
+	@vite([
+		'Modules/$STUDLY_NAME$/resources/assets/css/app.css',
+		'Modules/$STUDLY_NAME$/resources/assets/js/app.js',
+	])
+
+	@vite(['resources/css/app.css', 'resources/js/app.js'])
 </body>

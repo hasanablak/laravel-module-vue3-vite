@@ -8,13 +8,22 @@ import autoprefixer from "autoprefixer";
 import postcssRTLCSS from "postcss-rtlcss";
 
 const TASKMANAGER_VERSION = "4.1.3";
+const ASSET_PATHS = [
+    "Modules/*/resources/assets/css/app.css",
+    "Modules/*/resources/assets/js/app.js",
+];
 
+console.log(glob.sync(`{${ASSET_PATHS.join(",")}}`));
 export default defineConfig(({ command, mode }) => {
 	return {
 		base: "",
 		plugins: [
 			laravel({
-				input: ['resources/css/app.css', 'resources/js/app.js'],
+				input: [
+					'resources/css/app.css',
+					'resources/js/app.js',
+                    ...glob.sync(`{${ASSET_PATHS.join(",")}}`),
+				],
 				refresh: true,
 			}),
 			vue(), // Vue pluginini buraya ekleyin

@@ -1,11 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Nwidart\Modules\Facades\Module;
 
 Route::get('/', function () {
-	return view('welcome');
+	return redirect()->route('admin.dashboard');
 });
 
 Route::get('/admin', function () {
-	return view('admin.dashboard');
-});
+	$modules = Module::all();
+
+
+	return view('admin.dashboard', [
+		"modules" => $modules
+	]);
+})->name('admin.dashboard');

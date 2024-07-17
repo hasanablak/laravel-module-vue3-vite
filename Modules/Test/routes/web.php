@@ -16,5 +16,6 @@ use Modules\Test\Http\Controllers\TestController;
 
 Route::group(["prefix" => "test"], function () {
 
-	Route::get("/", [TestController::class, "index"])->name("index");
+	Route::resource('/', TestController::class)->parameters(["" => "test"])->names('test');
+	#Route::resource("/test", TestController::class)->names("index");
 });
