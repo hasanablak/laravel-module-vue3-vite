@@ -6,6 +6,7 @@ import copy from "rollup-plugin-copy";
 import path from "path";
 import autoprefixer from "autoprefixer";
 import postcssRTLCSS from "postcss-rtlcss";
+import {exec} from 'child_process'
 
 const TASKMANAGER_VERSION = "4.1.3";
 const ASSET_PATHS = [
@@ -13,7 +14,6 @@ const ASSET_PATHS = [
     "Modules/*/resources/assets/js/app.js",
 ];
 
-console.log(glob.sync(`{${ASSET_PATHS.join(",")}}`));
 export default defineConfig(({ command, mode }) => {
 	return {
 		base: "",
@@ -27,10 +27,17 @@ export default defineConfig(({ command, mode }) => {
 				refresh: true,
 			}),
 			vue(), // Vue pluginini buraya ekleyin
-		
 			{
 				name: 'my-custom-plugin',
 				handleHotUpdate({ file, server }) {
+					if (file.includes('/routes/')) {
+						const command = () => exec(
+							`php artisan ziggy:generate`,
+							(error, stdout, stderr) => console.log(stdout)
+						);
+
+						command();
+					}
 					// Dosya değişikliği sonrası çalışacak kod
 					if (file.endsWith('.js') || file.endsWith('.vue')) {
 						myFunctionAfterHMR();

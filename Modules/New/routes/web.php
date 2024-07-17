@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Modules\Blog\Http\Controllers\BlogController;
+use Modules\New\Http\Controllers\NewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +15,9 @@ use Modules\Blog\Http\Controllers\BlogController;
 */
 
 
-Route::group(["prefix" => "blog"], function () {
+Route::group(["prefix" => "new"], function () {
 
-	Route::resource('/', BlogController::class)->parameters(["" => "blog"])->names('blog');
-    #Route::resource('blog', BlogController::class)->names('blog');
+	Route::resource('/', NewController::class)->parameters(["" => "new"])->names('new');
+    #Route::resource('new', NewController::class)->names('new');
 
 });

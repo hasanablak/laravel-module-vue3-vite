@@ -1,11 +1,5 @@
 {
-    "Test": true,
-    "Mail": true,
-    "Blog": true,
-    "Test2": true,
-    "Tes32": true,
-    "Test3": true,
-    "Test4": true,
-    "Test5": true,
-    "Auth": true
+    "Auth": true,
+    "New": true,
+    "Blog": true
 }

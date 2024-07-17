@@ -1,40 +1,23 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layouts.app')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+@push('header')
 
-    <title>Auth Module - {{ config('app.name', 'Laravel') }}</title>
+@endpush
 
-    <meta name="description" content="{{ $description ?? '' }}">
-    <meta name="keywords" content="{{ $keywords ?? '' }}">
-    <meta name="author" content="{{ $author ?? '' }}">
+@section('content')
+	<div style="border:2px dashed white;padding:10px;background:rgba(215, 58, 58, 0.777)">
+		<h1>RED: MODULE WRAPPER</h1>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-	@stack('header')
+		@yield('module-content')
 
-</head>
-
-<body>
-   <div id="app">
-	 @yield('content')
-   </div>
+	</div>
+@endsection
 
 
-	<script>
-		const vueMixinFunctions = [];
-	</script>
-	@stack('footer')
+@push('footer')
 
 	@vite([
 		'Modules/Auth/resources/assets/css/app.css',
 		'Modules/Auth/resources/assets/js/app.js',
 	])
-
-	@vite(['resources/css/app.css', 'resources/js/app.js'])
-</body>
+@endpush

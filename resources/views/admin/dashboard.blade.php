@@ -1,11 +1,16 @@
-@extends('admin.app')
+@extends('layouts.app')
 
 @section('content')
 <div>
 	@{{test}}
 </div>
+
 <div>
-	<say-hello name="Mehmet"/>
+	Ziggy Route Test:
+	@{{route('home')}}
+</div>
+<div>
+	<say-hello name="Hasan"/>
 </div>
 
 <table>
@@ -17,7 +22,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		@foreach($modules as $moduleName => $module)
+		@foreach(\Module::all() as $moduleName => $module)
 		<tr>
 			<td>
 				{{$moduleName}}
@@ -53,7 +58,7 @@
 			},
 			data: function(){
 				return {
-					test: "merhaba2"
+					test: "Blade Vuejs Scripti"
 				}
 			}
 		}

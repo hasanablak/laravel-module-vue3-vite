@@ -8,5 +8,5 @@ const AsyncComp = defineAsyncComponent(() =>
   )
 );
 
-window.SayHelloFromBlog = SayHello;
+window.SayHelloFromNew = SayHello;
 window.AsyncComp = AsyncComp;

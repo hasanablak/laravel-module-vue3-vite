@@ -1,10 +1,10 @@
-@extends('$LOWER_NAME$::layouts.master')
+@extends('new::layouts.master')
 
 @section('module-content')
     <h1>Hello World</h1>
 
 
-    <p>Module: {!! config('$LOWER_NAME$.name') !!}</p>
+    <p>Module: {!! config('new.name') !!}</p>
 	
 	<div style="margin-top:50px;">
 		<h1>Blade içerisinde vue.js scripti kullanmak</h1>
@@ -25,7 +25,7 @@
 	<div style="margin-top:50px;">
 		<h1>Bu modüle özel Vue.js componenti oluşturup kullanmak</h1>
 		Aynı zamanda vue.js componentleri de çağırabilir ve kullanabilirsin<br>
-		<say-hello-from-$LOWER_NAME$ name="{{auth()->check() ? auth()->user()->name : env('APP_NAME')}}" />
+		<say-hello-from-new name="{{auth()->check() ? auth()->user()->name : env('APP_NAME')}}" />
 	</div>
 
 	<div style="margin-top:50px;">
@@ -44,7 +44,7 @@
 	const vueMixinFunction = () => {
 		return {
 			components: {
-				SayHelloFrom$STUDLY_NAME$,
+				SayHelloFromNew,
 				AsyncComp
 			},
 			data: function(){
@@ -62,12 +62,8 @@
 					}, 1000);
 				}
 			},
-			watch: {
-				"appStore": function(){
-					this.appStore.setEnv({
-						MODULE_NAME: '$STUDLY_NAME$'
-					})
-				}
+			mounted: function(){
+				
 			}
 		}
 	}

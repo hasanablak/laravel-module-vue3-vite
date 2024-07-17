@@ -1,6 +1,6 @@
 @extends('auth::layouts.master')
 
-@section('content')
+@section('module-content')
     <h1>Hello World</h1>
 
 
@@ -62,8 +62,12 @@
 					}, 1000);
 				}
 			},
-			mounted: function(){
-				
+			watch: {
+				"appStore": function(){
+					this.appStore.setEnv({
+						MODULE_NAME: 'TEST'
+					})
+				}
 			}
 		}
 	}

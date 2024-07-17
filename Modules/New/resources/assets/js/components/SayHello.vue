@@ -11,7 +11,7 @@ export default {
 	props: ["name"],
 	data() {
 		return {
-			module_name: 'Blog'
+			module_name: 'New'
 		};
 	}
 }
