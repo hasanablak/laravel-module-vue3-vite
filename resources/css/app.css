@@ -1,0 +1,778 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply relative z-1 bg-whiten font-satoshi text-base font-normal text-body;
+  }
+}
+
+@layer components {
+}
+
+@layer utilities {
+
+	input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .chat-height {
+    @apply h-[calc(100vh_-_8.125rem)] lg:h-[calc(100vh_-_5.625rem)];
+  }
+  .inbox-height {
+    @apply h-[calc(100vh_-_8.125rem)] lg:h-[calc(100vh_-_5.625rem)];
+  }
+}
+
+/* third-party libraries CSS */
+
+.tableCheckbox:checked ~ div span {
+  @apply opacity-100;
+}
+.tableCheckbox:checked ~ div {
+  @apply border-primary bg-primary;
+}
+
+.apexcharts-legend-text {
+  @apply !text-body dark:!text-bodydark;
+}
+.apexcharts-text {
+  @apply !fill-body dark:!fill-bodydark;
+}
+.apexcharts-xcrosshairs {
+  @apply !fill-stroke dark:!fill-strokedark;
+}
+.apexcharts-gridline {
+  @apply !stroke-stroke dark:!stroke-strokedark;
+}
+.apexcharts-series.apexcharts-pie-series path {
+  @apply dark:!stroke-transparent;
+}
+.apexcharts-legend-series {
+  @apply !inline-flex gap-1.5;
+}
+.apexcharts-tooltip.apexcharts-theme-light {
+  @apply dark:!border-strokedark dark:!bg-boxdark;
+}
+.apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {
+  @apply dark:!border-strokedark dark:!bg-meta-4;
+}
+.apexcharts-xaxistooltip,
+.apexcharts-yaxistooltip {
+  @apply dark:!border-meta-4 dark:!bg-meta-4 dark:!text-bodydark1;
+}
+.apexcharts-xaxistooltip-bottom:after {
+  @apply !border-b-gray dark:!border-b-meta-4;
+}
+.apexcharts-xaxistooltip-bottom:before {
+  @apply !border-b-gray dark:!border-b-meta-4;
+}
+.apexcharts-xaxistooltip-bottom {
+  @apply !rounded !border-none !bg-gray !text-xs !font-medium !text-black dark:!text-white;
+}
+.apexcharts-tooltip-series-group {
+  @apply !pl-1.5;
+}
+
+.flatpickr-wrapper {
+  @apply w-full;
+}
+.flatpickr-months .flatpickr-prev-month:hover svg,
+.flatpickr-months .flatpickr-next-month:hover svg {
+  @apply fill-primary;
+}
+.flatpickr-calendar.arrowTop:before {
+  @apply dark:!border-b-boxdark;
+}
+.flatpickr-calendar.arrowTop:after {
+  @apply dark:!border-b-boxdark;
+}
+.flatpickr-calendar {
+  @apply !p-6 dark:!bg-boxdark dark:!text-bodydark dark:!shadow-8 2xsm:!w-auto;
+}
+.flatpickr-day {
+  @apply dark:!text-bodydark dark:hover:!border-meta-4 dark:hover:!bg-meta-4;
+}
+.flatpickr-months .flatpickr-prev-month,
+.flatpickr-months .flatpickr-next-month {
+  @apply !top-7 dark:!fill-white dark:!text-white;
+}
+.flatpickr-months .flatpickr-prev-month.flatpickr-prev-month,
+.flatpickr-months .flatpickr-next-month.flatpickr-prev-month {
+  @apply !left-7;
+}
+.flatpickr-months .flatpickr-prev-month.flatpickr-next-month,
+.flatpickr-months .flatpickr-next-month.flatpickr-next-month {
+  @apply !right-7;
+}
+span.flatpickr-weekday,
+.flatpickr-months .flatpickr-month {
+  @apply dark:!fill-white dark:!text-white;
+}
+.flatpickr-day.inRange {
+  @apply dark:!shadow-7;
+  box-shadow: -5px 0 0 #eff4fb, 5px 0 0 #eff4fb;
+}
+.flatpickr-day.inRange,
+.flatpickr-day.prevMonthDay.inRange,
+.flatpickr-day.nextMonthDay.inRange,
+.flatpickr-day.today.inRange,
+.flatpickr-day.prevMonthDay.today.inRange,
+.flatpickr-day.nextMonthDay.today.inRange,
+.flatpickr-day:hover,
+.flatpickr-day.prevMonthDay:hover,
+.flatpickr-day.nextMonthDay:hover,
+.flatpickr-day:focus,
+.flatpickr-day.prevMonthDay:focus,
+.flatpickr-day.nextMonthDay:focus {
+  @apply border-gray bg-gray dark:!border-meta-4 dark:!bg-meta-4;
+}
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.selected,
+.flatpickr-day.endRange {
+  @apply dark:!text-white;
+}
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange,
+.flatpickr-day.selected.inRange,
+.flatpickr-day.startRange.inRange,
+.flatpickr-day.endRange.inRange,
+.flatpickr-day.selected:focus,
+.flatpickr-day.startRange:focus,
+.flatpickr-day.endRange:focus,
+.flatpickr-day.selected:hover,
+.flatpickr-day.startRange:hover,
+.flatpickr-day.endRange:hover,
+.flatpickr-day.selected.prevMonthDay,
+.flatpickr-day.startRange.prevMonthDay,
+.flatpickr-day.endRange.prevMonthDay,
+.flatpickr-day.selected.nextMonthDay,
+.flatpickr-day.startRange.nextMonthDay,
+.flatpickr-day.endRange.nextMonthDay {
+  background: #3c50e0;
+  @apply !border-primary !bg-primary hover:!border-primary hover:!bg-primary;
+}
+.flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n + 1)),
+.flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n + 1)),
+.flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n + 1)) {
+  box-shadow: -10px 0 0 #3c50e0;
+}
+
+.map-btn .jvm-zoom-btn {
+  @apply flex h-7.5 w-7.5 items-center justify-center rounded border border-stroke bg-white px-0 pt-0 pb-0.5 text-2xl leading-none text-body hover:border-primary hover:bg-primary hover:text-white dark:border-strokedark dark:text-bodydark dark:hover:border-primary dark:hover:text-white;
+}
+.mapOne .jvm-zoom-btn {
+  @apply left-auto top-auto bottom-0;
+}
+.mapOne .jvm-zoom-btn.jvm-zoomin {
+  @apply right-10;
+}
+.mapOne .jvm-zoom-btn.jvm-zoomout {
+  @apply right-0;
+}
+.mapTwo .jvm-zoom-btn {
+  @apply top-auto bottom-0;
+}
+.mapTwo .jvm-zoom-btn.jvm-zoomin {
+  @apply left-0;
+}
+.mapTwo .jvm-zoom-btn.jvm-zoomout {
+  @apply left-10;
+}
+
+.taskCheckbox:checked ~ .box span {
+  @apply opacity-100;
+}
+.taskCheckbox:checked ~ p {
+  @apply line-through;
+}
+.taskCheckbox:checked ~ .box {
+  @apply border-primary bg-primary dark:border-primary;
+}
+
+.custom-input-date::-webkit-calendar-picker-indicator {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+}
+.custom-input-date-1::-webkit-calendar-picker-indicator {
+  background-image: url(./assets/images/svg/icon-calendar.svg);
+}
+.custom-input-date-2::-webkit-calendar-picker-indicator {
+  background-image: url(./assets/images/svg/icon-arrow-down.svg);
+}
+
+[v-cloak] {
+  display: none !important;
+}
+button:disabled, input:disabled, textarea:disabled, select:disabled{
+	@apply !bg-slate-200 !cursor-no-drop
+}
+span.bill.default, button.pill.default{
+	@apply bg-gray rounded-full px-3 py-1 text-sm font-semibold text-gray
+}
+
+span.pill.primary, button.pill.primary{
+	@apply bg-primary rounded-full px-3 py-1 text-sm font-semibold text-gray
+}
+span.pill.outline-primary, button.pill.outline-primary{
+	@apply border border-primary rounded-full px-3 py-1 text-sm  hover:bg-opacity-90 hover:bg-primary hover:text-white
+}
+
+/* BEGIN: BTN */
+.btn{
+	@apply rounded-md border-[0.5px] bg-transparent  focus:outline-0 text-sm px-2.5 py-1 text-center
+}
+
+/* BEGIN: PRIMARY */
+	.btn.btn-primary{
+		@apply dark:text-white border-[#6c77a1] bg-primary text-white hover:border-primary hover:text-primary hover:bg-white hover:shadow-3
+	}
+	.btn.btn-primary.active{
+		@apply bg-white border-primary text-primary
+	}
+	.btn.btn-outline-primary{
+		@apply dark:text-white border-[#6c77a1]  hover:bg-opacity-90 hover:bg-primary hover:border-[#6c77a1] hover:text-white
+	}
+	.btn.btn-outline-primary.active{
+		@apply bg-primary border-[#6c77a1] text-white
+	}
+/* END: PRIMARY */
+
+/* BEGIN: DANGER */
+	.btn.btn-danger{
+		@apply  border-danger  dark:text-white bg-red-500 text-white hover:border-red-400 hover:text-red-500 hover:bg-white
+	}
+	.btn.btn-danger.active{
+		@apply border-red-400 text-red-500
+	}
+	.btn.btn-outline-danger{
+		@apply dark:text-white border-danger  hover:bg-opacity-90 hover:bg-danger hover:border-white hover:text-white
+	}
+	.btn.btn-outline-danger.active{
+		@apply bg-danger border-white text-white
+	}
+/* END: DANGER */
+
+/* BEGIN: WARNING */
+	.btn.btn-warning {
+		@apply dark:text-white border-[#f59e0b] bg-warning text-white hover:border-warning hover:text-warning hover:bg-white hover:shadow-3
+	}
+	.btn.btn-warning.active {
+		@apply bg-none border-warning text-warning
+	}
+	.btn.btn-outline-warning {
+		@apply dark:text-white border-[#f59e0b] hover:bg-opacity-90 hover:bg-warning hover:border-[#f59e0b] hover:text-white
+	}
+	.btn.btn-outline-warning.active {
+		@apply bg-warning border-[#f59e0b] text-white
+	}
+/* END: WARNING */
+
+/* BEGIN: SUCCESS */
+	.btn.btn-success {
+		@apply dark:text-white border-[#10b981] bg-success text-white hover:border-success hover:text-success hover:bg-white hover:shadow-3
+	}
+	.btn.btn-success.active {
+		@apply bg-none border-success text-success
+	}
+	.btn.btn-outline-success {
+		@apply dark:text-white border-[#10b981] hover:bg-opacity-90 hover:bg-success hover:border-[#10b981] hover:text-white
+	}
+	.btn.btn-outline-success.active {
+		@apply bg-success border-[#10b981] text-white
+	}
+/* END: SUCCESS */
+
+/* END: BTN */
+
+.multiselect__single{
+	@apply !pt-[0.2rem] !mb-0 
+}
+.multiselect__tag{
+	@apply bg-primary
+}
+.multiselect__tags{
+	@apply !min-h-[20px] 
+}
+.multiselect__option--highlight.multiselect__option{
+	@apply bg-primary
+}
+.multiselect__tag-icon:focus, .multiselect__tag-icon:hover{
+	@apply bg-slate-300 text-black
+}
+.multiselect__tag-icon{
+	@apply text-primary
+}
+.multiselect__placeholder{
+	@apply !mb-0 !pt-0
+}
+
+
+.multiselect__select{
+	@apply !h-[30px]
+}
+div.form-control,
+input[type=time].form-control,
+input[type=file].form-control,
+input[type=text].form-control,
+input[type=email].form-control,
+input[type=password].form-control,
+input[type=number].form-control,
+input[type=tel].form-control,
+textarea.form-control
+{
+	@apply rounded-md border-[0.5px] border-movandu-gray bg-transparent focus:outline-0 dark:text-white text-sm px-2.5 py-1 w-full
+}
+select.form-control{
+	@apply rounded-md border-[0.5px] border-black bg-transparent focus:outline-0 dark:text-white [&>option]:text-black text-sm px-2.5 py-1 w-full
+}
+label.form-label{
+	@apply dark:text-white text-sm pb-2
+}
+div.form-group{
+	@apply mb-4.5
+}
+
+.gradiant-border{
+	@apply rounded-md p-[1.50px] bg-[linear-gradient(0deg,_#1699DB_0%,_#046B9F_100%)] text-white
+}
+.gradiant-border > .gradiant{
+	@apply px-3 py-1.5 dark:bg-dark-0deg dark:text-white bg-light text-black rounded-md
+}
+.gradiant-border > .gradiant.active{
+	@apply bg-[linear-gradient(0deg,_#1699DB_0%,_#046B9F_100%)] text-white
+}
+.gradiant-border > .gradiant:disabled{
+	@apply text-red-700 m-11
+}
+
+.gradient-box:disabled{
+	background-image: none;
+	@apply bg-slate-300 cursor-no-drop
+	
+}
+.gradient-box:hover{
+	background-image:none;
+	@apply text-slate-200
+}
+.gradient-box.active{
+	@apply bg-outline text-white
+}
+.gradient-box {
+  position: relative;
+  
+  background-clip: padding-box;
+  /* !importanté */
+  border: solid 3px transparent;
+  /* !importanté */
+  border-radius: 0.375rem;
+  @apply px-3 py-1.5 text-black dark:text-white bg-light dark:bg-dark-n180deg 
+}
+.gradient-box:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -2px;
+  /* !importanté */
+  border-radius: inherit;
+  /* !importanté */
+  @apply bg-outline /* background-image: linear-gradient(157deg, #78dbad 5.6%, #008fc7 92.54%);*/
+}
+
+.gradient.circle {
+  @apply rounded-full w-6 h-6;
+
+  &::before {
+    content: "";
+    @apply rounded-full;
+  }
+
+  .inner-box {
+    @apply rounded-full
+  }
+}
+
+.gradient {
+  @apply  rounded-md p-[1.70px] relative bg-outline dark:bg-outline-dark;
+
+  &::before {
+    content: "";
+    @apply absolute inset-0 rounded-md bg-light dark:bg-dark-0deg;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1)); /* İsteğe bağlı olarak gradient ekleyebilirsiniz */
+  }
+
+  .inner-box {
+    @apply w-full h-full rounded-md flex items-center justify-center pe-px  dark:text-[#FF8216] bg-light dark:bg-dark-0deg;
+  }
+}
+
+.gradient:hover .inner-box{
+	background-image:unset;
+	@apply text-white 
+}
+.gradient.active .inner-box{
+	background-image:unset;
+	@apply text-white 
+}
+.gradient:hover{
+	@apply cursor-pointer
+}
+
+.gradient:hover .inner-box svg path{
+	fill: #fff;
+}
+
+.gradient.active .inner-box svg path{
+	fill: #fff;
+}
+
+.h-full-custom{
+	height:calc(100vh - 60px - 30px)
+}
+
+.card{
+ @apply rounded-md  shadow-classic mb-3 w-full
+}
+.card.active{
+	@apply border-y-4 border-[#59c1b6];
+}
+.card > .card-header{
+	@apply py-4 px-3.5 bg-[#F4F4F4] dark:bg-dark-3 rounded-md
+}
+
+.card > .card-header  h3 {
+	@apply font-semibold text-lg text-[#046B9F] dark:text-[#FF8216]
+}
+.card > .card-body{
+	@apply w-full h-fit dark:bg-dark-3 bg-[#FFFFFF] p-3.5 rounded-md
+}
+.card > .card-footer{
+	@apply bg-[#F4F4F4] px-4 py-3 sm:flex justify-end items-center sm:px-6
+}
+
+@layer utilities {
+
+  .all-unset {
+    all: unset;
+  }
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .chat-height {
+    @apply h-[calc(100vh_-_8.125rem)] lg:h-[calc(100vh_-_5.625rem)];
+  }
+  .inbox-height {
+    @apply h-[calc(100vh_-_8.125rem)] lg:h-[calc(100vh_-_5.625rem)];
+  }
+}
+
+/* third-party libraries CSS */
+
+.tableCheckbox:checked ~ div span {
+  @apply opacity-100;
+}
+.tableCheckbox:checked ~ div {
+  @apply border-primary bg-primary;
+}
+
+.apexcharts-legend-text {
+  @apply !text-body dark:!text-bodydark;
+}
+.apexcharts-text {
+  @apply !fill-body dark:!fill-bodydark;
+}
+.apexcharts-xcrosshairs {
+  @apply !fill-stroke dark:!fill-strokedark;
+}
+.apexcharts-gridline {
+  @apply !stroke-stroke dark:!stroke-strokedark;
+}
+.apexcharts-series.apexcharts-pie-series path {
+  @apply dark:!stroke-transparent;
+}
+.apexcharts-legend-series {
+  @apply !inline-flex gap-1.5;
+}
+.apexcharts-tooltip.apexcharts-theme-light {
+  @apply dark:!border-strokedark dark:!bg-boxdark;
+}
+.apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {
+  @apply dark:!border-strokedark dark:!bg-meta-4;
+}
+.apexcharts-xaxistooltip,
+.apexcharts-yaxistooltip {
+  @apply dark:!border-meta-4 dark:!bg-meta-4 dark:!text-bodydark1;
+}
+.apexcharts-xaxistooltip-bottom:after {
+  @apply !border-b-gray dark:!border-b-meta-4;
+}
+.apexcharts-xaxistooltip-bottom:before {
+  @apply !border-b-gray dark:!border-b-meta-4;
+}
+.apexcharts-xaxistooltip-bottom {
+  @apply !rounded !border-none !bg-gray !text-xs !font-medium !text-black dark:!text-white;
+}
+.apexcharts-tooltip-series-group {
+  @apply !pl-1.5;
+}
+
+.flatpickr-wrapper {
+  @apply w-full;
+}
+.flatpickr-months .flatpickr-prev-month:hover svg,
+.flatpickr-months .flatpickr-next-month:hover svg {
+  @apply fill-primary;
+}
+.flatpickr-calendar.arrowTop:before {
+  @apply dark:!border-b-boxdark;
+}
+.flatpickr-calendar.arrowTop:after {
+  @apply dark:!border-b-boxdark;
+}
+.flatpickr-calendar {
+  @apply !p-6 dark:!bg-boxdark dark:!text-bodydark dark:!shadow-8 2xsm:!w-auto;
+}
+.flatpickr-day {
+  @apply dark:!text-bodydark dark:hover:!border-meta-4 dark:hover:!bg-meta-4;
+}
+.flatpickr-months .flatpickr-prev-month,
+.flatpickr-months .flatpickr-next-month {
+  @apply !top-7 dark:!fill-white dark:!text-white;
+}
+.flatpickr-months .flatpickr-prev-month.flatpickr-prev-month,
+.flatpickr-months .flatpickr-next-month.flatpickr-prev-month {
+  @apply !left-7;
+}
+.flatpickr-months .flatpickr-prev-month.flatpickr-next-month,
+.flatpickr-months .flatpickr-next-month.flatpickr-next-month {
+  @apply !right-7;
+}
+span.flatpickr-weekday,
+.flatpickr-months .flatpickr-month {
+  @apply dark:!fill-white dark:!text-white;
+}
+.flatpickr-day.inRange {
+  @apply dark:!shadow-7;
+  box-shadow: -5px 0 0 #eff4fb, 5px 0 0 #eff4fb;
+}
+.flatpickr-day.inRange,
+.flatpickr-day.prevMonthDay.inRange,
+.flatpickr-day.nextMonthDay.inRange,
+.flatpickr-day.today.inRange,
+.flatpickr-day.prevMonthDay.today.inRange,
+.flatpickr-day.nextMonthDay.today.inRange,
+.flatpickr-day:hover,
+.flatpickr-day.prevMonthDay:hover,
+.flatpickr-day.nextMonthDay:hover,
+.flatpickr-day:focus,
+.flatpickr-day.prevMonthDay:focus,
+.flatpickr-day.nextMonthDay:focus {
+  @apply border-gray bg-gray dark:!border-meta-4 dark:!bg-meta-4;
+}
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.selected,
+.flatpickr-day.endRange {
+  @apply dark:!text-white;
+}
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange,
+.flatpickr-day.selected.inRange,
+.flatpickr-day.startRange.inRange,
+.flatpickr-day.endRange.inRange,
+.flatpickr-day.selected:focus,
+.flatpickr-day.startRange:focus,
+.flatpickr-day.endRange:focus,
+.flatpickr-day.selected:hover,
+.flatpickr-day.startRange:hover,
+.flatpickr-day.endRange:hover,
+.flatpickr-day.selected.prevMonthDay,
+.flatpickr-day.startRange.prevMonthDay,
+.flatpickr-day.endRange.prevMonthDay,
+.flatpickr-day.selected.nextMonthDay,
+.flatpickr-day.startRange.nextMonthDay,
+.flatpickr-day.endRange.nextMonthDay {
+  background: #3c50e0;
+  @apply !border-primary !bg-primary hover:!border-primary hover:!bg-primary;
+}
+.flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n + 1)),
+.flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n + 1)),
+.flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n + 1)) {
+  box-shadow: -10px 0 0 #3c50e0;
+}
+
+.map-btn .jvm-zoom-btn {
+  @apply flex h-7.5 w-7.5 items-center justify-center rounded border border-stroke bg-white px-0 pt-0 pb-0.5 text-2xl leading-none text-body hover:border-primary hover:bg-primary hover:text-white dark:border-strokedark dark:text-bodydark dark:hover:border-primary dark:hover:text-white;
+}
+.mapOne .jvm-zoom-btn {
+  @apply left-auto top-auto bottom-0;
+}
+.mapOne .jvm-zoom-btn.jvm-zoomin {
+  @apply right-10;
+}
+.mapOne .jvm-zoom-btn.jvm-zoomout {
+  @apply right-0;
+}
+.mapTwo .jvm-zoom-btn {
+  @apply top-auto bottom-0;
+}
+.mapTwo .jvm-zoom-btn.jvm-zoomin {
+  @apply left-0;
+}
+.mapTwo .jvm-zoom-btn.jvm-zoomout {
+  @apply left-10;
+}
+
+.taskCheckbox:checked ~ .box span {
+  @apply opacity-100;
+}
+.taskCheckbox:checked ~ p {
+  @apply line-through;
+}
+.taskCheckbox:checked ~ .box {
+  @apply border-primary bg-primary dark:border-primary;
+}
+
+.custom-input-date::-webkit-calendar-picker-indicator {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+}
+.custom-input-date-1::-webkit-calendar-picker-indicator {
+  background-image: url(./assets/images/svg/icon-calendar.svg);
+}
+.custom-input-date-2::-webkit-calendar-picker-indicator {
+  background-image: url(./assets/images/svg/icon-arrow-down.svg);
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+
+@layer utilities {
+  .rounded-full-important {
+    border-radius: 100% !important;
+  }
+}
+/* 
+.swal2-confirm.swal2-styled.swal2-default-outline{
+	all:unset;
+} */
+
+
+
+.col-span-8{
+	grid-column: span 8 / span 8;
+}
+
+.col-span-4{
+	grid-column: span 4 / span 4;
+}
+
+#sidebar svg path{
+	fill:#016ba0
+}
+
+
+.red-dot {
+  background-color: red;
+  animation: red-blink 1s infinite;
+}
+
+
+@keyframes red-blink {
+  0%, 100% {
+    background-color: red;
+  }
+  50% {
+    background-color: white;
+  }
+}
+
+.dp__input_wrap > input{
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-radius: 0.375rem;
+    border-width: 0.5px;
+    --tw-border-opacity: 1;
+    border-color: rgb(108 119 161 / var(--tw-border-opacity));
+    background-color: transparent;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: inherit;
+}
+
+.vs__dropdown-toggle{
+	padding-bottom:0px!important
+}
+.vs--single .vs__selected{
+	margin-top:0px!important;
+	padding-left: 0.450rem;
+    color: inherit;
+
+
+}
+.vs--single.vs--open .vs__selected, .vs--single.vs--loading .vs__selected{
+	margin-top:0.15rem!important;
+}
+.vs__search{
+	margin-top:0.15rem!important;
+	margin-bottom:0.15rem!important;
+	font-size: 0.875rem;
+
+}
+
+.vs__search, .vs__search:focus{
+	font-size: 0.875rem;
+	margin-left: 0.210rem;
+}
+
+.vs__dropdown-toggle{
+	border-radius: 0.375rem;
+    border-width: 0.5px;
+    --tw-border-opacity: 1;
+    border-color: rgb(28 36 52 / var(--tw-border-opacity));
+    background-color: transparent;
+
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+.vs__actions{
+	padding-top:0px;
+}

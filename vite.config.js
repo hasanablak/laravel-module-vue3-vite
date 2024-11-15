@@ -45,18 +45,6 @@ export default defineConfig(({ command, mode }) => {
 				},
 			},
 		],
-		css: {
-            postcss: {
-                plugins: [
-                    autoprefixer(),
-                    postcssRTLCSS({
-                        ltrPrefix: ".ltr",
-                        rtlPrefix: ".rtl",
-                        processKeyFrames: true,
-                    }),
-                ],
-            },
-        },
 		resolve: {
             alias: {
                 vue: path.resolve(
