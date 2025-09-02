@@ -1,15 +1,16 @@
 Bu Projenin içerisinde
 
-Laravel 11, Vue3, Vite
+Laravel 11, Vue3, Vite, Tailwindcss
 
 Laravel içerisinde
 Nwidart Modüle
 Ziggy Route
 
-
-Vue3 İçerisinde
 Pinia
 Ziggy Route
+Sweatalert
+Axios implemention
+Automatically Laravel validation error handler
 
 Bulunmaktadır.
 

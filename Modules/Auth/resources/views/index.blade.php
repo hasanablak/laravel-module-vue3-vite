@@ -32,7 +32,8 @@
 		<h1>Async Vue.js componenti oluşturup kullanmak</h1>
 		Aşağıdaki butona tıkladıktan sonra 1 saniye sonra async bir component yüklenecek!<br>
 		Tıklamadan önce öğeyi denetleyi açıp => js kısmına bakmayı unutma!<br>
-		<button @click="handleLoadComponentButton">Component'i yükle</button>
+		<button @click="handleLoadComponentButton" class="border rounded-md p-2 hover:opacity-80 bg-slate-400">Component'i yükle</button>
+		<template v-if="showComponentIsLoading"><span class="ml-2">loading...</span></template>
 		<async-comp v-if="showAsyncComp" name="{{auth()->check() ? auth()->user()->name : env('APP_NAME')}}"/>
 	</div>
 @endsection
@@ -50,15 +51,17 @@
 			data: function(){
 				return {
 					test: "merhaba2",
-					showAsyncComp: false
+					showAsyncComp: false,
+					showComponentIsLoading: false
 				}
 			},
 			methods: {
 				handleLoadComponentButton: function(){
 					let self = this;
-				
+					self.showComponentIsLoading = true;
 					setTimeout(() => {
 						self.showAsyncComp = true;
+						self.showComponentIsLoading = false;
 					}, 1000);
 				}
 			},
