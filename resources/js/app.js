@@ -14,4 +14,4 @@ function myFunctionAfterHMR() {
   // Burada çalıştırmak istediğiniz diğer işlemler
 }
 
-myFunctionAfterHMR();
+// myFunctionAfterHMR();

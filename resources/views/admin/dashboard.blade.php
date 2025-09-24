@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.app', [
+	"title" => "Dashboard Page"
+])
 
 @section('content')
 <div class="border p-2 bg-green-500">

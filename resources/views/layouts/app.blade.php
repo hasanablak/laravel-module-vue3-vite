@@ -4,9 +4,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>App Layout</title>
+	<title>{{$title ?? config('app.name')}}</title>
 
 	@stack('header')
+	@vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
 <body>
 <div id="app">
@@ -80,9 +82,9 @@
 		
 		
 
-<Modal v-if="showModal" @close="showModal = false">
-	
-</Modal>
+	<Modal v-if="showModal" @close="showModal = false">
+		
+	</Modal>
 	</div>
 
 <script>
@@ -110,7 +112,6 @@
 	];
 </script>
 @stack('footer')
-@vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </body>
 </html>
